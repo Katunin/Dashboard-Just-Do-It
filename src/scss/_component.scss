@@ -1,0 +1,371 @@
+// Component
+
+// title
+%title {
+  font-size: $titleFontSize;
+  color: $titleColor;
+  font-weight: $fontBold;
+}
+
+.section-title {
+  @extend %title;
+  .small-title {
+    font-size: $smallTitleFontSize;
+  }
+}
+
+.page-title {
+  @extend %title;
+  text-transform: uppercase;
+}
+
+//links
+
+.link {
+  font-size: $linkFontSizeDefault;
+  color: $linkColor;
+
+  &.large-link {
+    font-size: $linkLargeFont;
+  }
+
+  &:hover {
+    color: $linkHoverColor;
+  }
+}
+
+// buttons
+.btn {
+  padding: 12px 22px;
+  font-size: $btnFontSize;
+  color: $btnDefaultColor;
+  border-radius: 2px;
+  display: inline-block;
+
+  & + .btn {
+    margin-left: $defaultIndent;
+  }
+
+  &.btn-default {
+    background-color: $btnDefaultBg;
+
+    &:hover {
+      background-color: $btnDefaultBgHover;
+    }
+  }
+
+  &.btn-action {
+    background-color: $btnActiontBg;
+    &:hover {
+      background-color: $btnActionBgHover;
+    }
+  }
+
+  &.btn-disabled {
+    background-color: $btnDisabletBg;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: $btnDisableBgHover;
+    }
+  }
+}
+
+// tabs
+.tab {
+  padding: 12px 18px;
+  color: $grey;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 5px;
+  background: $white;
+  display: inline-flex;
+
+  &:hover {
+    background: $xsLightGrey;
+  }
+
+  &.active {
+    background: $xsLightGrey;
+  }
+  &:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: $turquoise;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 13px;
+  }
+}
+
+// inputs
+.form-control {
+  padding: 15px;
+  border-radius: 5px;
+  color: $grey;
+
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
+    border: 1px solid $grey;
+    color: $black;
+  }
+
+  &.disabled,
+  &.invalid {
+    border: 2px solid $red;
+    background: $white;
+  }
+}
+input[disabled=""] {
+  border: 2px solid $red;
+  background: $white;
+}
+
+// table
+.table {
+  border-collapse: collapse;
+  font-size: $tableFontSize;
+
+  &.full-width {
+    width: 100%;
+  }
+
+  tbody {
+    tr {
+
+      &:last-child {
+        td {
+          border-bottom: 1px solid $lightGrey;
+        }
+      }
+
+      &:hover {
+        background-color: $tableTrHover;
+      }
+    }
+  }
+  tr {
+
+    th {
+      padding: 30px 18px;
+      color: $grey;
+    }
+
+    td {
+      padding: 18px;
+      border-top: 1px solid $lightGrey;
+      font-size: $tableFontSize;
+
+      &.td-title {
+        font-size: 16px;
+        color: $grey;
+      }
+    }
+  }
+  .table-sort {
+    color: $grey;
+    padding: 8px 10px;
+    margin: -8px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+
+    &:hover {
+      color: $black;
+      background-color: $xsLightGrey;
+    }
+  }
+}
+
+// pagination
+%activePaginationLink {
+  background-color: $xsLightGrey;
+  color: $darkGrey;
+  border-radius: 2px;
+}
+
+.pagination {
+
+  li {
+    display: inline-block;
+
+    &.active {
+      a {
+        @extend %activePaginationLink;
+      }
+    }
+
+    a {
+      display: inline-block;
+      padding: $defaultIndent;
+
+      &:hover {
+        @extend %activePaginationLink;
+      }
+    }
+
+  }
+}
+
+// notifications
+.notification {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 5px;
+  color: $white;
+  cursor: pointer;
+
+  &.success {
+    background-color: $xsLightGreen;
+  }
+  &.success:hover {
+    background-color: $lightGreen;
+  }
+  &.negative {
+    background-color: $lightPink;
+  }
+  &.negative:hover {
+    background-color: $pink;
+  }
+
+}
+
+//container
+.container-fluid {
+  padding: $defaultIndent;
+}
+.container-sm {
+  max-width: 684px;
+  margin: 0 auto;
+}
+
+//header
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid $lightGrey;
+  right: 0;
+  left: 0;
+  height: 60px;
+}
+
+
+
+// aside
+%activeLink {
+  background-color: #282828;
+  color: #fff;
+  border-left-color: $orange;
+}
+
+.aside {
+  background-color: $asideBg;
+  width: $asideWidth;
+  height: 100vh;
+  left: 0;
+  z-index: 100;
+
+  .menu-control {
+    padding: $defaultIndent;
+
+    .menu-btn {
+      cursor: pointer;
+
+      span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background-color: $darkGrey;
+
+        & + span {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+  .aside-menu {
+
+    ul {
+
+      li {
+        color: $darkGrey;
+
+        &.active {
+          a {
+            @extend %activeLink;
+          }
+        }
+
+        a {
+          display: inline-block;
+          padding: 14px;
+          border-left: 4px solid transparent;
+
+          &:hover {
+            @extend %activeLink;
+          }
+        }
+      }
+    }
+  }
+
+  .your-manager {
+    padding: 27px $defaultIndent;
+    border-top: $darkGrey;
+
+    .manager-info {
+
+      margin-top: $defaultIndent;
+
+      .manager-photo {
+        position: relative;
+        margin-right: 10px;
+
+        .status {
+          width: 11px;
+          height: 11px;
+          border-radius: 50%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          &.online {
+            background-color: $green;
+          }
+          &.offline {
+            background-color: $red;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+// Content wrapper
+.content-wrapper {
+  padding: $defaultIndent;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+.panel {
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
+
+  & + .panel {
+    margin-top: $defaultIndent;
+  }
+
+  .panel-header {
+    border-bottom: 1px solid $lightGrey;
+    padding: $defaultIndent;
+  }
+
+  .panel-body {
+    padding: $defaultIndent;
+  }
+
+}
