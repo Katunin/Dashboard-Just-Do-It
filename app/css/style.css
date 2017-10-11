@@ -44,6 +44,9 @@ button {
 .text-center {
   text-align: center; }
 
+.text-left {
+  text-align: left; }
+
 .fixed-to-top {
   position: fixed;
   z-index: 99;
@@ -66,6 +69,12 @@ button {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between; }
+
+.flex-end {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
 
 .section-title, .page-title {
   font-size: 16px;
@@ -162,7 +171,7 @@ input[disabled=""] {
   .table tbody tr:hover {
     background-color: #f1f3f3; }
   .table tr th {
-    padding: 30px 18px;
+    padding: 30px 0;
     color: #bababa; }
   .table tr td {
     padding: 18px;
@@ -211,7 +220,7 @@ input[disabled=""] {
     background-color: #de5252; }
 
 .container-fluid {
-  padding: 18px; }
+  /*padding: $defaultIndent;*/ }
 
 .container-sm {
   max-width: 684px;
@@ -221,8 +230,17 @@ input[disabled=""] {
   background-color: #ffffff;
   border-bottom: 1px solid #e3e3e3;
   right: 0;
-  left: 0;
-  height: 60px; }
+  left: 0; }
+
+.user-controls div {
+  display: inline-block;
+  padding: 20px;
+  border-left: 1px solid #e3e3e3;
+  color: #979797;
+  font-size: 20px; }
+
+.personal-money {
+  font-weight: 700; }
 
 .aside .aside-menu ul li.active a, .aside .aside-menu ul li a:hover {
   background-color: #282828;

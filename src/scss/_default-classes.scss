@@ -6,6 +6,9 @@
 .text-center {
   text-align: center;
 }
+.text-left {
+  text-align: left;
+}
 
 // class position fixed
 .fixed-to-top {
@@ -23,4 +26,7 @@
 }
 .justify-content-sb {
   justify-content: space-between;
+}
+.flex-end {
+  justify-content: flex-end;
 }
